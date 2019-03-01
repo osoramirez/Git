@@ -306,29 +306,64 @@ $(document).ready(function () {
 
 <p><br />
 <br />
-# Bases de datos</p>
-<p>Una vez colectada su base de datos, usted puede respaldaldarla en su cuenta de Github.</p>
-<p>**Guarde siempre sus archivos desde el Excel en extensión <span style="color:blue">.csv</span>.</p>
-<p>Para ello cree un repositorio que se llame bases de datos. Arrastre ahi las bases de datos que quiere respaldar.</p>
-<p><span class="math display">\[
-\]</span></p>
-<div id="cargando-bases-de-datos" class="section level1">
-<h1>Cargando bases de datos</h1>
-<pre class="r"><code>datos &lt;- read.table(&quot;https://raw.githubusercontent.com/osoramirez/bases_datos/master/G_TimeA.csv&quot;, sep=&quot;;&quot;, header=TRUE)</code></pre>
-<pre class="markdown"><code>Revise que su separador decimal en su coputadora, para que sus datos estén bien estrcuturados a la hora de cargarlos.</code></pre>
-<p><span class="math display">\[
-\]</span></p>
+# Mostrar adjuntos</p>
+<p>Hay varias opciones para adjuntar diferentes formas de brindar una referencia</p>
+<p><br />
+<br />
+<br />
+## URL link</p>
+<p>Esta es mi página principal ir al siguiente <a href="https://osoramirez.weebly.com/">Página</a></p>
+<pre class="markdown"><code>[Página](https://osoramirez.weebly.com/)</code></pre>
+<p>o solo escriba <a href="https://osoramirez.weebly.com/" class="uri">https://osoramirez.weebly.com/</a> &lt; dirección &gt; para dirigir el hypervínculo</p>
+<pre class="markdown"><code>&lt;https://osoramirez.weebly.com/&gt; </code></pre>
+<p><br />
+<br />
+<br />
+# Adjuntar imágenes</p>
+<p>Para tener un buen orden de los archivos, recomiendo, crear un folder que se llame “imagenes” y ahi guarde sus archivos de imágenes que quiera utilizar. Usted puede adjuntar el .jpg o .png.</p>
+<p><span class="math inline">\(~\)</span> <span class="math inline">\(~\)</span> <span class="math inline">\(~\)</span> <span class="math inline">\(~\)</span> <span class="math inline">\(~\)</span> <span class="math inline">\(~\)</span></p>
+<div id="forma-simple" class="section level3">
+<h3>Forma simple</h3>
+<pre class="markdown"><code>
+# ![](imagenes/colibri.jpg)
+</code></pre>
+<div class="figure">
+<img src="imagenes/colibri.jpg" />
+
 </div>
-<div id="graficando" class="section level1">
-<h1>Graficando</h1>
-<p>Una vez cargada la base de datos usted puede realizar análisis o gráficos. Solo recuerde insertar un chunk, para generar resultados o analisis gráfico en su página</p>
-<pre class="r"><code>library(ggplot2)
-ggplot(datos, aes(x=Hour, y=SPLmean))+
-  geom_boxplot(fill=&quot;#999999&quot;, alpha=.7) +facet_grid(.~Sites) + theme_bw()</code></pre>
-<pre><code>## Warning: Continuous x aesthetic -- did you forget aes(group=...)?</code></pre>
-<p><img src="bases_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>Explore otros tipos de graficos.</p>
-<p>Practique subiendo sus datos</p>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="cambiar-a-un-ancho-definido" class="section level3">
+<h3>Cambiar a un ancho definido</h3>
+<pre class="markdown"><code>Utilice
+
+![](imagenes/colibri.jpg){width=150px}
+</code></pre>
+<div class="figure">
+<img src="imagenes/colibri.jpg" width="150" />
+
+</div>
+<p><br />
+<br />
+<br />
+<br />
+### Largo y ancho definido</p>
+<pre class="markdown"><code>&lt;div style=&quot;width:300px; height:200px&quot;&gt;
+![](imagenes/colibri.jpg)
+&lt;/div&gt;</code></pre>
+<div style="width:100px; height:100px">
+<div class="figure">
+<img src="imagenes/colibri.jpg" />
+
+</div>
+</div>
+<pre class="r"><code>a &lt;- rnorm(100)
+hist(a)</code></pre>
+<p><img src="adjuntos_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 </div>
 
 
