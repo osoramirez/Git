@@ -39,3 +39,5 @@ ggplot(datos, aes(x=Hour, y=SPLmean))+
 ```
 
 Explore otros tipos de graficos.
+
+Practique subiendo sus datos
