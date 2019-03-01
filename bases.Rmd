@@ -38,6 +38,6 @@ ggplot(datos, aes(x=Hour, y=SPLmean))+
   geom_boxplot(fill="#999999", alpha=.7) +facet_grid(.~Sites) + theme_bw()
 ```
 
-Explore otros tipos de graficos.
+Explore otros tipos de gráficos.
 
 Practique subiendo sus datos
