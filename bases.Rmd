@@ -3,12 +3,12 @@
 
 # Bases de datos
 
-Una vez colectada su base de datos, usted puede respaldaldarla en su cuenta de Github.
+Una vez colectada su base de datos, usted puede respaldar en su cuenta de Github.
 
 **Guarde siempre sus archivos desde el Excel en extensión <span style="color:blue">.csv</span>.
 
 
-Para ello cree un repositorio que se llame bases de datos.  Arrastre ahi las bases de datos que quiere respaldar.
+Para ello cree un repositorio que se llame bases de datos.  Arrastre ahí las bases de datos que quiere respaldar.
 
 $$
 $$
@@ -17,7 +17,8 @@ $$
 # Cargando bases de datos
 
 ```{r}
-datos <- read.table("https://raw.githubusercontent.com/osoramirez/bases_datos/master/G_TimeA.csv", sep=";", header=TRUE)
+datos <- read.table("https://raw.githubusercontent.com/osoramirez/bases_datos/master/G_Time_lmeT2.csv", sep=",", header=TRUE)
+head(datos,4)
 ```
 
 ```markdown
@@ -30,14 +31,68 @@ $$
 
 # Graficando
 
-Una vez cargada la base de datos usted puede realizar análisis o gráficos. Solo recuerde insertar un chunk, para generar resultados o analisis gráfico en su página
+Una vez cargada la base de datos usted puede realizar análisis o gráficos. Solo recuerde insertar un chunk, para generar resultados o análisis gráfico en su página
 
-```{r}
-library(ggplot2)
-ggplot(datos, aes(x=Hour, y=SPLmean))+
-  geom_boxplot(fill="#999999", alpha=.7) +facet_grid(.~Sites) + theme_bw()
-```
 
 Explore otros tipos de gráficos.
 
 Practique subiendo sus datos
+
+
+```{r, echo=FALSE}
+library(Rmisc)
+datos <- read.table("https://raw.githubusercontent.com/osoramirez/bases_datos/master/G_Time_lmeT2.csv", sep=",", header=TRUE)
+tgc <- summarySE(datos, measurevar="F34", groupvars=c("Hour", "Sites", "Phase"))
+
+```
+
+```{r, echo=FALSE}
+library(ggplot2)
+p <- ggplot(tgc, aes(x=as.factor(Hour), y=F34, group=Sites, color=Sites)) +
+  geom_errorbar(aes(ymin=F34- se, ymax=F34+ se), width=.4) +
+  geom_line(size=1.4) +
+  scale_color_brewer(palette="Set1") +
+  labs(x = "Hour", y = "F34") +
+  theme(legend.position = "top")+scale_x_discrete(breaks = c("0","6","12", "18", "23"))
+p
+```
+
+
+
+```{r, echo=FALSE}
+library(gganimate)
+p <- ggplot(tgc,  aes(x=as.factor(Hour), F34, group = Sites, color = Sites)
+) +  geom_line(size=1.4) +
+  scale_color_discrete() +
+  labs(x = "Hour", y = "F34") +
+  theme(legend.position = "top")+scale_x_discrete(breaks = c("0","6","12", "18", "23"))
+
+p<- p + 
+  geom_point(size=3.8) +
+  transition_reveal(Hour)
+p
+```
+
+$$
+$$
+
+$$
+$$
+
+
+## Creación de tablas manuales
+
+| Nombre Científico | Nombre en Inglés | Estatus |
+|:--- | :---  | :---:  |
+| Glaucis aeneus|Bronzy Hermit |R
+| Amazilia tzacatl |Rufous-tailed Hummingbird |R
+
+
+```markdown
+
+| Nombre Científico | Nombre en Inglés | Estatus |
+|:--- | :---  | :---:  |
+| Glaucis aeneus|Bronzy Hermit |R
+| Amazilia tzacatl |Rufous-tailed Hummingbird |R
+
+```

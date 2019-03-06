@@ -37,7 +37,7 @@ Es importante que dejes la **indentación** (espacios brindados) como se muestra
 
 ## Tipos de fuentes y estilos de letras.  
 
-Para obtener diferetes tipos de fuentes, utiliza el simbolo **#** y un espacio posterior al incio de cada título o subtitulo que requieras utilizar.
+Para obtener diferentes tipos de fuentes, utiliza el símbolo **#** y un espacio posterior al incoo de cada título o subtitulo que requieras utilizar.
 
 # Encabezado 1
 ## Encabezado 2
@@ -71,7 +71,7 @@ Para obtener diferetes tipos de fuentes, utiliza el simbolo **#** y un espacio p
 
 ## Color de texto 
 
-Para crear color en texto se debe generar un "spam (lapzo)" previo y cerrarlo de la misma manera
+Para crear color en texto se debe generar un "spam (lapso)" previo y cerrarlo de la misma manera
 
 Rosas son <span style="color:red">rojas</span>, y las violetas son <span style="color:blue">azules</span>.
 
