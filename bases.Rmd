@@ -73,6 +73,16 @@ p<- p +
 p
 ```
 
+
+
+```{r}
+p1 <- ggplot(tgc, aes(x=Hour, y=F34, fill=Sites)) + 
+  geom_boxplot()
+p1
+```
+
+
+
 $$
 $$
 
